@@ -1,9 +1,9 @@
 export default {
   TWITTER: "TWITTER",
   MESSAGES: "MESSAGES",
-  NOTES: 'NOTES',
+  NOTES: "NOTES",
   CAMERA: "CAMERA",
-  BANK: 'BANK',
-  DAILER: 'DAILER',
-  MARKET: 'MARKET'
+  BANK: "BANK",
+  DAILER: "DAILER",
+  MARKET: "MARKET",
 };
