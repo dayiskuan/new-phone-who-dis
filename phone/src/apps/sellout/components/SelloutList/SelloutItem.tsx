@@ -13,32 +13,44 @@ const useStyles = makeStyles((theme) => ({
     flexFlow: "row nowrap",
     alignItems: "flex-start",
     width: "100%",
-    marginTop: "3px",
+    marginTop: "5px",
   },
   content: {
     display: "flex",
-    marginTop: "-10px",
+    marginTop: "-5px",
     flexFlow: "column nowrap",
     width: "100%",
   },
   paper: {
+    borderRadius: 15,
     overflow: "auto",
     display: "flex",
-    flexFlow: "column",
-    alignItems: "flex",
+    color: '#292929',
+    justifyContent: 'space-between',
     height: "auto",
-    background: "#232323",
+    background: "#fff",
     marginBottom: 20,
+    boxShadow: '0px 0px 5px 0px rgba(0,0,0,0.75)'
   },
   header: {
-    margin: 10,
-  },
-  headerTypo: {
     margin: 5,
   },
-  desc: {
-    padding: 10,
+  headerTypo: {
+    margin: 3,
   },
+  desc: {
+    padding: 3,
+    fontSize: 16,
+    color: '#838383',
+    paddingTop: '5px',
+    paddingLeft: '10px',
+  },
+  imageSection: {
+    float: 'right',
+  },
+  listingImage: {
+
+  }
 }));
 
 export const SelloutItem = (listing) => {
@@ -48,34 +60,22 @@ export const SelloutItem = (listing) => {
       <div className={classes.content}>
         <Paper elevation={2} className={classes.paper}>
           <div className={classes.header}>
-            <Typography className={classes.headerTypo} variant="h5">
-              {listing.name}
-            </Typography>
-            <Typography
-              className={classes.headerTypo}
-              style={{ borderBottom: "1px solid #f44336" }}
-            >
-              {listing.number}
-            </Typography>
-            <Typography variant="h5" style={{ padding: 5}}>
+            <Typography variant="h5" style={{ padding: '5px 0px 0px 10px', }}>
               {listing.title}
             </Typography>
+            <Typography variant="h6" className={classes.desc}>
+              {listing.description}
+            </Typography>
           </div>
-          {listing.url ? (
-            <ImageDisplay imgURL={listing.url} />
-          ): (
-            <Typography style={{ margin: 10 }}>No image provided🙁</Typography>
-          ) }
-          <Typography variant="h6" className={classes.desc}>
-            {listing.description}
-          </Typography>
-          <div>
-            <Button>
-              <ChatIcon style={{ color: "#f44336" }} />
-            </Button>
-            <Button>
-              <PhoneIcon style={{ color: "#f44336" }} />
-            </Button>
+          <div className={classes.imageSection}>
+            <div className={classes.listingImage} style={{
+              backgroundImage: `url(${listing.url})`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              width: '150px',
+              height: '150px'
+            }} />
           </div>
         </Paper>
       </div>
