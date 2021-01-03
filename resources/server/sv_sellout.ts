@@ -4,26 +4,27 @@ import { ESX } from './server';
 import { getSource } from "./functions";
 import { pool } from './db';
 import { usePhoneNumber } from './functions';
+import { Listings} from "../../phone/src/common/typings/listings";
 
 
-interface Listing {
-  title: string;
-  name: string;
-  url?: string;
-  description: string;
-}
-
-
-async function fetchAllListings(): Promise<Listing[]> {
+/*
+Fetches all the listings and returns an array of objects
+ */
+async function fetchAllListings(): Promise<Listings[]> {
   const query = "SELECT * FROM npwd_sellout_listings ORDER BY id DESC";
 
   const [ results ] = await pool.query(query);
-  const listings = <Listing[]>results;
-
-  return listings;
+  return <Listings[]>results;
 }
 
-async function addListing(identifier: string, name: string, number: any, listing: Listing): Promise<any> {
+/**
+ * Adds the note to the database with the player identifier and the note.
+ * @param identifier A players unique identifier
+ * @param name The player in-game name
+ * @param number The players phone number
+ * @param listing The listing object
+ */
+async function addListing(identifier: string, name: string, number: string, listing: Listings): Promise<any> {
   const query = "INSERT INTO npwd_sellout_listings (identifier, name, number, title, url, description) VALUES (?, ?, ?, ?, ?, ?)"
   await pool.query(query, [
     identifier, 
@@ -35,6 +36,9 @@ async function addListing(identifier: string, name: string, number: any, listing
   ])
 } 
 
+/*
+Event that sends the listings to client, which sends to NUI
+ */
 onNet(events.SELLOUT_FETCH_LISTING, async () => {
   try {
     const _source = (global as any).source;
@@ -46,7 +50,10 @@ onNet(events.SELLOUT_FETCH_LISTING, async () => {
   }
 })
 
-onNet(events.SELLOUT_ADD_LISTING, async (listing: Listing) => {
+/*
+Event 
+ */
+onNet(events.SELLOUT_ADD_LISTING, async (listing: Listings) => {
   try {
     const xPlayer = ESX.GetPlayerFromId(getSource())
     const _identifier = xPlayer.getIdentifier()
@@ -57,4 +64,8 @@ onNet(events.SELLOUT_ADD_LISTING, async (listing: Listing) => {
   } catch (error) {
    console.log("Failed to add contact: ", error) 
   }
+})
+
+onNet('phone:createExternalProccess', async () => {
+
 })
