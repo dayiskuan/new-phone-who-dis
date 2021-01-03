@@ -1,7 +1,7 @@
 import events from "../utils/events";
-import { pool } from "./db";
-import { useIdentifier, getSource } from "./functions";
-import { Note, NoteId } from "../../phone/src/common/interfaces/notes";
+import {pool} from "./db";
+import {getSource, useIdentifier} from "./functions";
+import {Note, NoteId} from "../../phone/src/common/typings/notes";
 
 async function addNote(identifier: string, note: Note): Promise<any> {
   const query =
@@ -13,8 +13,7 @@ async function fetchAllNotes(identifier: string): Promise<Note[]> {
   const query =
     "SELECT * FROM npwd_notes WHERE identifier = ? ORDER BY id DESC";
   const [result] = await pool.query(query, [identifier]);
-  const notes = <Note[]>result;
-  return notes;
+  return <Note[]>result;
 }
 
 async function deleteNote(noteId: number, identifier: string) {
@@ -31,7 +30,7 @@ async function updateNote(note: Note, identifier: string): Promise<any> {
 onNet(events.NOTE_ADD_NOTE, async (note: Note) => {
   try {
     const _identifier = await useIdentifier();
-    addNote(_identifier, note);
+    await addNote(_identifier, note);
     emitNet(events.NOTE_SEND_NOTE_SUCCESS, getSource());
   } catch (error) {
     console.log("NOTES ERROR: ", error);
@@ -63,7 +62,7 @@ onNet(events.NOTE_UPDATE_NOTE, async (note: Note) => {
   const _source = (global as any).source;
   try {
     const _identifier = await useIdentifier();
-    updateNote(note, _identifier);
+    await updateNote(note, _identifier);
     emitNet(events.NOTE_UPDATE_NOTE_SUCCESS, _source);
   } catch (error) {
     emitNet(events.NOTE_UPDATE_NOTE_FAILURE, _source);
