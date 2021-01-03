@@ -1,8 +1,8 @@
 import events from '../utils/events';
-import { ESX, getSource } from './server';
-import { pool } from './db';
-import { useIdentifier } from './functions';
-import { IPhoto } from '../../phone/src/common/interfaces/photo';
+import {getSource} from './server';
+import {pool} from './db';
+import {useIdentifier} from './functions';
+import {IPhoto} from '../../phone/src/common/typings/photo';
 
 async function uploadPhoto(identifier: string, image: string) {
   const query = 'INSERT INTO npwd_phone_gallery (identifier, image) VALUES (?, ?)';
@@ -12,8 +12,7 @@ async function uploadPhoto(identifier: string, image: string) {
 async function getPhotosByIdentifier(identifier: string): Promise<IPhoto[]> {
   const query = "SELECT id, image FROM npwd_phone_gallery WHERE identifier = ? ORDER BY id DESC";
   const [ results ] = await pool.query(query, [identifier]);
-  const photos = <IPhoto[]>results;
-  return photos;
+  return <IPhoto[]>results;
 }
 
 async function deletePhoto(photo: IPhoto, identifier: string) {
