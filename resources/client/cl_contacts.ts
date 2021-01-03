@@ -26,8 +26,7 @@ onNet(events.CONTACTS_ADD_CONTACT_SUCCESS, () => {
 
 RegisterNuiCallbackType(events.CONTACTS_UPDATE_CONTACT);
 on(`__cfx_nui:${events.CONTACTS_UPDATE_CONTACT}`, (data: any) => {
-  const contact = data;
-  emitNet(events.CONTACTS_UPDATE_CONTACT, contact)
+  emitNet(events.CONTACTS_UPDATE_CONTACT, data)
 })
 
 onNet(events.CONTACTS_UPDATE_CONTACT_SUCCESS, () => {
@@ -36,14 +35,14 @@ onNet(events.CONTACTS_UPDATE_CONTACT_SUCCESS, () => {
 
 RegisterNuiCallbackType(events.CONTACTS_DELETE_CONTACT);
 on(`__cfx_nui:${events.CONTACTS_DELETE_CONTACT}`, (data: any) => {
-  const contact = data;
-  emitNet(events.CONTACTS_DELETE_CONTACT, contact)
+  emitNet(events.CONTACTS_DELETE_CONTACT, data)
 })
 
 onNet(events.CONTACTS_DELETE_CONTACT_SUCCESS, () => {
   emitNet(events.CONTACTS_GET_CONTACTS)
 })
 
+/*
 onNet(events.CONTACTS_ACTION_RESULT, (result: string) => {
   SendNuiMessage(
     JSON.stringify({
@@ -52,4 +51,4 @@ onNet(events.CONTACTS_ACTION_RESULT, (result: string) => {
       data: result
     })
   )
-})
+})*/
