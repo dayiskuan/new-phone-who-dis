@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;500;600&display=swap');
+
+#sellout-app {
+  background-color: #F6F6F6;
+}
+
 #sellout-app .Mui-selected {
   color: #f44336 !important;
 }
 
 
-#sellout-app 	.Mui-focused::after {
+#sellout-app .Mui-focused::after {
   border-bottom: #f44336 solid 3px;
 }
