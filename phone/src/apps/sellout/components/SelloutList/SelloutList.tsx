@@ -4,7 +4,7 @@ import { SelloutItem } from "./SelloutItem";
 
 export const SelloutList = ({ listings }) => {
   return (
-    <List>
+    <List style={{ backgroundColor: '#F6F6F6' }}>
       {listings.map((listing) => (
         <SelloutItem key={listing.id} {...listing} />
       ))}
