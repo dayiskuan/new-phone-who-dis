@@ -24,7 +24,7 @@ export const SelloutTitle = () => {
   const classes = useStyles();
   return (
     <Paper className={classes.root} square variant='outlined' elevation={24}>
-      <FontAwesomeIcon icon={faAd} className={classes.icon} />
+      <h3>Marketplace</h3>
     </Paper>
   );
 };
