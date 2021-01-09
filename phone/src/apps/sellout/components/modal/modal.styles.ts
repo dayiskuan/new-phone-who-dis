@@ -1,22 +1,22 @@
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme: Theme ) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   root: {
     position: 'absolute',
-    width: "100%",
+    width: '100%',
     backgroundColor: '#F9F9F9',
     height: '100%',
-    margin: "auto",
-    textAlign: "center",
-    fontFamily: "'Libre Franklin', sans-serif"
+    margin: 'auto',
+    textAlign: 'center',
+    fontFamily: "'Libre Franklin', sans-serif",
   },
   hidden: {
-    display: 'none'
+    display: 'none',
   },
   header: {
     background: 'red',
     width: '100%',
-    height: '30%'
+    height: '30%',
   },
   closeButton: {
     position: 'absolute',
@@ -32,9 +32,8 @@ const useStyles = makeStyles((theme: Theme ) => ({
     alignItems: 'center',
     borderRadius: 50,
     '&:hover': {
-      background: '#fff'
+      background: '#fff',
     },
-    
   },
   editButton: {
     position: 'absolute',
@@ -96,17 +95,17 @@ const useStyles = makeStyles((theme: Theme ) => ({
     color: '#fff',
     fontFamily: "'Libre Franklin', sans-serif",
     marginTop: 35,
-    padding: 5
+    padding: 5,
   },
   metaContainer: {
     width: '90%',
-    marginTop: '3em'
+    marginTop: '3em',
   },
   metaSection: {
     display: 'block',
     width: '90%',
     paddingBottom: 5,
-    borderBottom: '2px solid #838383'
+    borderBottom: '2px solid #838383',
   },
   metaDetail: {
     color: '#000',
@@ -117,8 +116,8 @@ const useStyles = makeStyles((theme: Theme ) => ({
   descContianer: {
     float: 'left',
     fontSize: '18',
-    color: '#504F4F'
-  }
-}))
+    color: '#504F4F',
+  },
+}));
 
 export default useStyles;

@@ -3,5 +3,5 @@ import { selloutState } from './state';
 
 export const useItemModal = () => {
   const [itemModal, setItemModal] = useRecoilState(selloutState.itemModal);
-  return { itemModal, setItemModal};
-}
+  return { itemModal, setItemModal };
+};

@@ -2,29 +2,29 @@ import { makeStyles, Theme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    overflowX: "hidden",
-    display: "flex",
-    flexFlow: "row nowrap",
-    alignItems: "flex-start",
-    width: "100%",
-    marginTop: "5px",
+    overflowX: 'hidden',
+    display: 'flex',
+    flexFlow: 'row nowrap',
+    alignItems: 'flex-start',
+    width: '100%',
+    marginTop: '5px',
   },
   content: {
-    display: "flex",
-    marginTop: "-5px",
-    flexFlow: "column nowrap",
-    width: "100%",
+    display: 'flex',
+    marginTop: '-5px',
+    flexFlow: 'column nowrap',
+    width: '100%',
   },
   paper: {
     borderRadius: 15,
-    overflow: "auto",
-    display: "flex",
+    overflow: 'auto',
+    display: 'flex',
     color: '#292929',
     justifyContent: 'space-between',
-    height: "auto",
-    background: "#fff",
+    height: 'auto',
+    background: '#fff',
     marginBottom: 20,
-    boxShadow: '0px 0px 5px 0px rgba(0,0,0,0.75)'
+    boxShadow: '0px 0px 5px 0px rgba(0,0,0,0.75)',
   },
   header: {
     margin: 5,
@@ -42,9 +42,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   imageSection: {
     float: 'right',
   },
-  listingImage: {
-
-  },
-}))
+  listingImage: {},
+}));
 
 export default useStyles;

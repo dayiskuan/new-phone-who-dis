@@ -1,7 +1,7 @@
-import React from "react";
-import { List } from "../../../../ui/components/List";
-import SelloutSearch from "../search/SelloutSearch";
-import { SelloutItem } from "./SelloutItem";
+import React from 'react';
+import { List } from '../../../../ui/components/List';
+import SelloutSearch from '../search/SelloutSearch';
+import { SelloutItem } from './SelloutItem';
 
 export const SelloutList = ({ listings }) => {
   return (

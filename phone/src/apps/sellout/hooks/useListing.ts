@@ -1,5 +1,5 @@
-import { useRecoilValue } from "recoil";
-import { selloutState } from "./state";
+import { useRecoilValue } from 'recoil';
+import { selloutState } from './state';
 
 import { Listings } from '../../../common/typings/listings';
 

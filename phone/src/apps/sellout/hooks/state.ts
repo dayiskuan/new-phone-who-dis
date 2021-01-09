@@ -1,13 +1,13 @@
-import { atom } from "recoil";
+import { atom } from 'recoil';
 
 export const selloutState = {
   listing: atom({
-    key: "listing",
+    key: 'listing',
     default: [],
   }),
   listingModal: atom({
     key: 'listingModal',
-    default: false
+    default: false,
   }),
   listingDetails: atom({
     key: 'listingDetails',
@@ -15,6 +15,6 @@ export const selloutState = {
   }),
   itemModal: atom({
     key: 'itemModal',
-    default: false
-  })
+    default: false,
+  }),
 };

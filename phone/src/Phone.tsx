@@ -227,14 +227,15 @@ if (process.env.NODE_ENV === 'development') {
               description: 'Selling this cool car',
               url: 'https://i.imgur.com/ROmGTwi.jpeg',
               price: 400,
-              posted: '1/9/2021'
+              posted: '1/9/2021',
             },
             {
               id: 2,
               name: 'Some other dude',
               number: '666-6666',
               title: 'Material',
-              description: 'Selling my wife olsdfjsdfk jfksdaj kasjfksf jdkasf jklasf jasklf jaskf',
+              description:
+                'Selling my wife olsdfjsdfk jfksdaj kasjfksf jdkasf jklasf jasklf jaskf',
               url: '',
               price: 30,
             },
