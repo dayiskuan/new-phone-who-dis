@@ -6,11 +6,11 @@ import { SelloutListContainer } from "./SelloutList/SelloutListContainer";
 
 import "./Sellout.css";
 import {ListingForm} from "./form/ListingForm";
+import ItemModal from "./modal/ItemModal";
 
 export const SelloutApp = () => {
   return (
     <AppWrapper id="sellout-app">
-      <SelloutTitle />
       <AppContent>
         <ListingForm />
         <SelloutListContainer />

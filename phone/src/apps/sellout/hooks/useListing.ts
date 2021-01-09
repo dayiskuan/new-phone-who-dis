@@ -1,7 +1,9 @@
 import { useRecoilValue } from "recoil";
 import { selloutState } from "./state";
 
+import { Listings } from '../../../common/typings/listings';
+
 export const useListing = () => {
-  const listing = useRecoilValue(selloutState.listing);
-  return { listing };
+  const listings = useRecoilValue(selloutState.listing);
+  return listings;
 };

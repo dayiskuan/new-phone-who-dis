@@ -5,7 +5,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontFamily: "'Libre Franklin', sans-serif",
     fontSize: 32,
     textAlign: 'left',
-    paddingLeft: 25
+    paddingLeft: 25,
+    textShadow: '0px 3px #504F4F',
   },
 	searchContainer: {
 		width: '100%',
@@ -37,6 +38,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 	},
 	subMenuButton: {
     display: 'flex',
+    boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
     justifyContent: 'space-around',
     alignItems: 'center',
 		backgroundColor: '#fff',

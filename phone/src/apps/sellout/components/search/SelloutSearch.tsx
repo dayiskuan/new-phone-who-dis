@@ -20,7 +20,7 @@ const SelloutSearch = () => {
 	return (
 		<div className={classes.searchContainer}>
 			<div className={classes.header}>
-      <h2 className={classes.headerTitle}>Marketplace</h2>
+        <h2 className={classes.headerTitle}>Marketplace</h2>
 				<div className={classes.search}>
 					<div className={classes.searchIcon}>
 						<SearchIcon style={{ color: '#838383' }} />

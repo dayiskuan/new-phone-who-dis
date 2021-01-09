@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   listingImage: {
 
-  }
+  },
 }))
 
 export default useStyles;

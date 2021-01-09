@@ -1,10 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button, Typography, Paper } from "@material-ui/core";
-import { ImageDisplay } from "../images/ImageDisplay";
 import { ListItem } from "../../../../ui/components/ListItem";
-import ChatIcon from "@material-ui/icons/Chat";
-import PhoneIcon from "@material-ui/icons/Phone";
+import { useItemModal } from "../../hooks/useItemModal";
+import { useListingDetails } from "../../hooks/useListingDetails";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,11 +49,33 @@ const useStyles = makeStyles((theme) => ({
   },
   listingImage: {
 
+  },
+  price: {
+    fontWeight: 600,
+    paddingLeft: '10px',
+    fontFamily: "'Libre Franklin', sans-serif",
+
+  },
+  readMoreBtn: {
+    background: '#FF9472',
+    paddingLeft: '10px',
+    '&:hover': {
+      background: '#FE9485'
+    }
   }
 }));
 
 export const SelloutItem = (listing) => {
   const classes = useStyles();
+
+  const { setItemModal } = useItemModal()
+  const { setDetails } = useListingDetails();
+
+  const handleOpenListing = (listing) => {
+    setDetails(listing)
+    setItemModal(true)
+  }
+
   return (
     <ListItem className={classes.root}>
       <div className={classes.content}>
@@ -64,8 +85,14 @@ export const SelloutItem = (listing) => {
               {listing.title}
             </Typography>
             <Typography variant="h6" className={classes.desc}>
-              {listing.description}
+              {listing.description.slice(0, 30)}...
             </Typography>
+            <Typography variant="h6" className={classes.price}>
+              ${listing.price}
+            </Typography>
+            <Button className={classes.readMoreBtn} onClick={() => handleOpenListing(listing)}>
+              Read more
+            </Button>
           </div>
           <div className={classes.imageSection}>
             <div className={classes.listingImage} style={{

@@ -7,6 +7,14 @@ export const selloutState = {
   }),
   listingModal: atom({
     key: 'listingModal',
-    default: true
+    default: false
+  }),
+  listingDetails: atom({
+    key: 'listingDetails',
+    default: null,
+  }),
+  itemModal: atom({
+    key: 'itemModal',
+    default: false
   })
 };

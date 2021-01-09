@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'none'
   },
   input: {
-    marginBottom: 25,
+    marginBottom: 20,
     fontFamily: "'Libre Franklin', sans-serif"
   },
   textFieldInput: {
@@ -87,6 +87,13 @@ export const ListingForm = () => {
 
       <InputBase
         className={classes.input}
+        placeholder="Category"
+        inputProps={{ className: classes.textFieldInput }}
+        style={{ width: "80%" }}
+      />
+
+      <InputBase
+        className={classes.input}
         placeholder="Image or URL link"
         inputProps={{ className: classes.textFieldInput }}
         style={{ width: "80%" }}
@@ -107,7 +114,7 @@ export const ListingForm = () => {
         inputProps={{ className: classes.multilineFieldInput }}
         style={{ width: "80%" }}
         multiline
-        rows={7}
+        rows={3}
       />
 
       <Button onClick={addListing} className={classes.postButton}>Post</Button>

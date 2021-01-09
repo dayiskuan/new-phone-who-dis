@@ -2,6 +2,7 @@ export interface Listings {
   name: string;
   phone_number: string;
   title: string;
-  url?: string;
+  url: string;
   description: string;
+  price: number;
 }
