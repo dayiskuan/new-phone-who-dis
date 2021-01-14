@@ -20,12 +20,12 @@ const useStyles = makeStyles((theme: Theme) => ({
 export const SelloutListContainer = () => {
   const { modal } = useListingModal();
   const { itemModal } = useItemModal();
-  const listing = useListing();
+  const { listings } = useListing();
 
   const classes = useStyles();
   return (
     <div className={modal ? classes.hidden : classes.show}>
-      {itemModal ? <ItemModal /> : <SelloutList listings={listing} />}
+      {itemModal ? <ItemModal /> : <SelloutList listings={listings} />}
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { atom } from 'recoil';
 export const selloutState = {
   listing: atom({
     key: 'listing',
-    default: [],
+    default: null,
   }),
   listingModal: atom({
     key: 'listingModal',

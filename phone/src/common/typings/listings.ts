@@ -1,4 +1,5 @@
-export interface Listings {
+export interface ListingProps {
+  id: number;
   name: string;
   phone_number: string;
   title: string;

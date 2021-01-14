@@ -8,7 +8,7 @@ export const SelloutList = ({ listings }) => {
     <div>
       <SelloutSearch />
       <List style={{ backgroundColor: '#F6F6F6' }}>
-        {listings.map((listing) => (
+        {listings?.map(listing => (
           <SelloutItem key={listing.id} {...listing} />
         ))}
       </List>
