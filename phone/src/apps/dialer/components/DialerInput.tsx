@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React, { ChangeEvent, useContext } from 'react';
 import { Box, IconButton, InputBase, Paper } from '@material-ui/core';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 import PhoneIcon from '@material-ui/icons/Phone';
-import { DialInputCtx } from '../context/InputContext';
+import { DialInputCtx, IDialInputCtx } from '../context/InputContext';
 import Nui from '../../../os/nui-events/utils/Nui';
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 export const DialerInput = () => {
   const classes = useStyles();
 
-  const { inputVal } = useContext(DialInputCtx)
+  const { inputVal } = useContext<IDialInputCtx>(DialInputCtx);
 
   const handleCall = (number: string) => {
     Nui.send('phone:beginCall', {
@@ -35,12 +35,15 @@ export const DialerInput = () => {
     });
   };
 
+  const handleInput = (e: ChangeEvent<HTMLInputElement>) => {};
+
   return (
     <Box component={Paper} className={classes.root}>
       <InputBase
         placeholder='Enter a number'
         className={classes.input}
         value={inputVal}
+        onChange={handleInput}
       />
       <IconButton className={classes.iconBtn}>
         <PhoneIcon onClick={() => handleCall(inputVal)} />

@@ -45,7 +45,7 @@ export const DialerApp = () => {
           <Route exact path='/phone'>
             <DialerHistory calls={history} />
           </Route>
-          <Route path='/phone/contacts' component={ContactList}></Route>
+          <Route path='/phone/contacts' component={ContactList} />
         </Switch>
       </AppContent>
       <DialerNavBar />

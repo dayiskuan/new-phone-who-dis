@@ -5,14 +5,14 @@ import { DialerInput } from '../DialerInput';
 import { DialInputCtx } from '../../context/InputContext';
 import { useQueryParams } from '../../../../common/hooks/useQueryParams';
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles({
   root: {
     width: '100%',
     minHeight: '100%',
     display: 'flex',
     flexDirection: 'column',
   },
-}));
+});
 
 const DialPage = () => {
   const classes = useStyles();
@@ -28,6 +28,7 @@ const DialPage = () => {
           add: (val: string) => setInputVal(inputVal + val),
           removeOne: () => setInputVal(inputVal.slice(0, -1)),
           clear: () => setInputVal(''),
+          setVal: (val: string) => setInputVal(val),
         }}
       >
         <DialerInput />
