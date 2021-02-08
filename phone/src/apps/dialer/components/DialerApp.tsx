@@ -13,7 +13,7 @@ import { ContactList } from '../../contacts/components/List/ContactList';
 
 InjectDebugData([
   {
-    app: 'DAILER',
+    app: 'DIALER',
     method: 'setHistory',
     data: [
       {

@@ -351,8 +351,8 @@ on(`__cfx_nui:${events.OPEN_APP_CAMERA}`, () => {
   emitNet(events.CAMERA_FETCH_PHOTOS);
 });
 
-RegisterNuiCallbackType(events.OPEN_APP_DAILER);
-on(`__cfx_nui:${events.OPEN_APP_DAILER}`, () => {
+RegisterNuiCallbackType(events.OPEN_APP_DIALER);
+on(`__cfx_nui:${events.OPEN_APP_DIALER}`, () => {
   emitNet(events.CONTACTS_GET_CONTACTS);
   emitNet(events.PHONE_CALL_FETCH_CALLS);
 });

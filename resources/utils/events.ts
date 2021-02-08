@@ -83,7 +83,7 @@ export default {
   OPEN_APP_NOTES: 'phone:app:NOTES',
   OPEN_APP_LISTINGS: 'phone:app:SELLOUT',
   OPEN_APP_CAMERA: 'phone:app:CAMERA',
-  OPEN_APP_DAILER: 'phone:app:DIALER',
+  OPEN_APP_DIALER: 'phone:app:DIALER',
 
   // camera
   CAMERA_TAKE_PHOTO: 'phone:TakePhoto',

@@ -5,7 +5,7 @@ import { useDialHistory } from './useDialHistory';
 
 export const useDialService = () => {
   const setHistory = useSetRecoilState(dialState.history);
-  useNuiEvent('DAILER', 'setHistory', setHistory);
+  useNuiEvent('DIALER', 'setHistory', setHistory);
 
   return useDialHistory();
 };
